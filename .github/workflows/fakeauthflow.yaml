@@ -15,9 +15,7 @@ jobs:
   does_work:
     runs-on: ubuntu-latest
     outputs:
-      output_env: ${{ steps.step1.outputs.foundenvironment }}
+      output_env: ${{ steps.step2.outputs.foundenvironment }}
     steps:
     - id: step2
-      with:
-        environment-name: ${{ inputs.environment-name }}
       run: echo "foundenvironment=$environment-name" >> $GITHUB_OUTPUT
