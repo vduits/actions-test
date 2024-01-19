@@ -1,10 +1,10 @@
 name: workflow-a
 run-name: It appears @${{ github.actor }} started a workflow
 on:
-  push:
-    tags:
-      - *.-release
-  workflow_dispatch:
+  # push:
+  #   tags:
+  #     - *.-release
+  workflow_dispatch
 
 jobs:
   try-using-nested-workflow:
