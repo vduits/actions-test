@@ -18,4 +18,8 @@ jobs:
       output_env: ${{ steps.step2.outputs.foundenvironment }}
     steps:
     - id: step2
-      run: echo "foundenvironment=${{ inputs.environment-name }}" >> $GITHUB_OUTPUT
+      run: |
+        echo "Seeing $ENV_GRABBED, passing it to output"
+        echo "foundenvironment=$ENV_GRABBED" >> $GITHUB_OUTPUT
+      env: 
+        ENV_GRABBED: ${{ inputs.environment-name }}
