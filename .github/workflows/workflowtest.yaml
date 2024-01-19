@@ -9,7 +9,7 @@ on:
 jobs:
   try-using-nested-workflow:
     # uses: vduits/actions-test/.github/workflows/fakeauthflow.yaml@main
-    uses: ./.github/workflows/fakeauthflow.yaml@main
+    uses: ./.github/workflows/fakeauthflow.yaml
     with:
       environment-name: development
   reveal-output:
