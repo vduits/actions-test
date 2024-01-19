@@ -1,4 +1,4 @@
-name: workflow-a
+name: main workflow
 run-name: It appears @${{ github.actor }} started a workflow
 on:
   # push:

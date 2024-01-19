@@ -1,4 +1,4 @@
-name: reusable workflow tryout
+name: reusable workflow
 
 on:
   workflow_call:
