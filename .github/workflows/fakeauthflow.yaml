@@ -18,4 +18,4 @@ jobs:
       output_env: ${{ steps.step2.outputs.foundenvironment }}
     steps:
     - id: step2
-      run: echo "foundenvironment=$environment-name" >> $GITHUB_OUTPUT
+      run: echo "foundenvironment=${{ inputs.environment-name }}" >> $GITHUB_OUTPUT
