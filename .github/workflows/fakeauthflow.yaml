@@ -1,0 +1,23 @@
+name: reusable workflow tryout
+
+on:
+  workflow_call:
+    inputs:
+      environment-name:
+        required: true
+        type: string
+    outputs:
+      foundenvironment:
+        description: "The environment that was found"
+        value: ${{ jobs.does_work.outputs.output_env }}
+
+jobs:
+  does_work:
+    runs-on: ubuntu-latest
+    outputs:
+      output_env: ${{ steps.step1.outputs.foundenvironment }}
+    steps:
+    - id: step2
+      with:
+        environment-name: ${{ inputs.environment-name }}
+      run: echo "foundenvironment=$environment-name" >> $GITHUB_OUTPUT
