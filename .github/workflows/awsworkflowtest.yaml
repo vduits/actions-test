@@ -1,0 +1,23 @@
+name: awsworkflow
+
+on:
+  workflow_call:
+
+
+jobs:
+  testaws:
+    name: Test AWS resolve
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: arn:aws:iam::209633676096:role/GithubCITest
+        aws-region: eu-west-1
+    # - name: Install CDK
+    #   run: npm install -g aws-cdk
+    - name: List buckets
+      run: aws s3 ls
